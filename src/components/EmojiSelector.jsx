@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 const emojis = [
-  "😎", "🤓", "😒", "🦒", "😺", "🌲", "😶‍🌫️", "😍", "🐶", 
-  "🕺", "😁", "🦆", "🦢", "😶", "🤩", "🌟", "🪨", "🌞", "🌚"
+  '😎', '🤓', '😒', '🦒', '😺', '🌲', '😶‍🌫️', '😍', '🐶',
+  '🕺', '😁', '🦆', '🦢', '😶', '🤩', '🌟', '🪨', '🌞', '🌚',
 ];
 
-const EmojiSelection = () => {
+const EmojiSelector = ({ onSelection }) => {
   const [player1Emoji, setPlayer1Emoji] = useState(null);
   const [player2Emoji, setPlayer2Emoji] = useState(null);
   const [currentPlayer, setCurrentPlayer] = useState(1);
@@ -27,29 +27,12 @@ const EmojiSelection = () => {
       setSelectedEmoji(null);
     } else {
       if (selectedEmoji === player1Emoji) {
-        alert('Os emojis não podem ser iguais😒');
+        alert('Os emojis não podem ser iguais 😒');
         return;
       }
       setPlayer2Emoji(selectedEmoji);
+      onSelection(player1Emoji, selectedEmoji); 
     }
-  };
-
-  const renderEmojiGrid = () => {
-    return (
-      <div className="d-flex flex-wrap justify-content-center gap-3">
-        {emojis.map((emoji, index) => (
-          <button
-            key={index}
-            className={`btn btn-outline-primary p-3 ${selectedEmoji === emoji ? 'active' : ''}`}
-            onClick={() => handleEmojiSelect(emoji)}
-            disabled={currentPlayer === 2 && emoji === player1Emoji}
-            style={{ fontSize: '2rem' }}
-          >
-            {emoji}
-          </button>
-        ))}
-      </div>
-    );
   };
 
   return (
@@ -63,7 +46,19 @@ const EmojiSelection = () => {
       ) : (
         <div>
           <h2>Escolha o emoji do Jogador {currentPlayer}</h2>
-          {renderEmojiGrid()}
+          <div className="d-flex flex-wrap justify-content-center gap-3">
+            {emojis.map((emoji, index) => (
+              <button
+                key={index}
+                className={`btn btn-outline-primary p-3 ${selectedEmoji === emoji ? 'active' : ''}`}
+                onClick={() => handleEmojiSelect(emoji)}
+                disabled={currentPlayer === 2 && emoji === player1Emoji}
+                style={{ fontSize: '2rem' }}
+              >
+                {emoji}
+              </button>
+            ))}
+          </div>
           <div className="mt-4">
             <button
               className="btn btn-success"
@@ -79,4 +74,4 @@ const EmojiSelection = () => {
   );
 };
 
-export default EmojiSelection;
+export default EmojiSelector;
