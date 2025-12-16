@@ -1,16 +1,18 @@
-<h2 align="center">🚥Reflect Game</h2>
-Um jogo de reflexo onde os jogadores tem que apertar no botão no momento certo
-<h2 align="center">🎮Jogabilidade</h2>
-😎Icones Personalizados: Cada jogador pode utilizar um avatar personalizado
-🕹️Jogo Funcional: O jogo é totalmente jogável e simples
-👾Suporte com 2 Jogadores: O jogo fica bem melhor com um amigo, onde vocês podem disputar que irá apertar mais rapido
+<h2 align="center">🚥 Reflect Game</h2>
+
+The **Reflect Game** is a simple yet challenging reflex-based game where players must press a button at the precise, correct moment. Test your reaction time and compete for the fastest reflexes!
+
+<h2 align="center">🎮 Gameplay & Features</h2>
+
+* **😎 Custom Player Icons:** Personalize your experience! Each player can select and use a custom avatar/icon.
+* **🕹️ Fully Functional Game:** The game is simple, intuitive, and fully playable right out of the box.
+* **👾 2-Player Support:** Enhance the fun by playing with a friend! Compete head-to-head to see who can achieve the fastest reaction time.
 
 <h2 align="center">🛠 Tech Stack</h2>
 
 <p align="center">
-  <code>React 18</code> • 
-  <code>Vite</code> • 
-  <code>JavaScript (ES6+)</code> • 
-  <code>CSS3 / Custom Components</code> • 
+  <code>React 18</code> • 
+  <code>Vite</code> • 
+  <code>JavaScript (ES6+)</code> • 
+  <code>CSS3 / Custom Components</code>
 </p>
-
